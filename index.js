@@ -128,11 +128,15 @@
 // - Створити 3 змінних firstName, middleName, lastName, наповнити їх своїм ПІБ. З'єднати їх в одну змінну person. (Не об'єкт)
 // - За допомогою 3х різних prompt() отримати 3 слова які являються вашими Імям, По-Батькові та роками.
 //     Вивести "Вітаю *Імя* *По батькові*. Тобі *вік* років".
-
-let person={firstName:"Анастасия",middleName:"Анатольевна",lastName:"Григорьева", age:20};
-console.log(person.firstName);
-console.log(person.middleName);
-console.log(person.age);
+let firstName = "Анастасия";
+let middleName = "Анатольевна";
+let lastName = "Григорьева";
+let age = 20;
+console.log( `${firstName} ${middleName} ${lastName}`);
+// let person={firstName:"Анастасия",middleName:"Анатольевна",lastName:"Григорьева", age:20};
+// console.log(person.firstName);
+// console.log(person.middleName);
+// console.log(person.age);
 
 console.log(' Вітаю ' + person.firstName + "    " + person.middleName + '.  ' + person.age + ' років');
 console.log(` Вітаю ${person.firstName} ${person.middleName}. Тобі ${person.age} років` )
