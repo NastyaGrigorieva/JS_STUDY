@@ -4,7 +4,7 @@
 //     Інакше слід вивести на екран повідомлення про те, що це маленький масив, в якому менше 3-х елементів.
 
 // let friends = ["Ivan", "Slavik", "Grisha", "Lera", "Ira"];
-// if(friends >= 3  ){
+// if(friends.length >= 3  ){
 //     console.log('big array');
 //     alert('big boss');
 // } else{
@@ -26,6 +26,8 @@
 //     result = 'Багато';
 // }
 
+let result = a + b < 4 ? 'Мало' : 'Багато';
+console.log(result)
 
 //
 // - Маємо будь яке число від -100 , 0 , +100 потрібно перевірити яким є число: позитивним, негативним або нулем
@@ -42,12 +44,12 @@
 // } else{
 //     document.write('шо это такое вообще');
 // }
-let number = +prompt("число");
-if (number >= -1 && number <= -100) {
-    console.log('негатив')
-} else if (number >= 1 && number <= 100) {
-    console.log('позитив')
-}
- else if (number === 0){
-    console.log("ноль")
-}
+
+
+let x = -100;
+
+const res = x >= 0 
+                ? x === 0 
+                        ? 'нулем'
+                        : "позитивним"
+                : 'негативним'
