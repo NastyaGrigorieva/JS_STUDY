@@ -1,38 +1,35 @@
 // 1. Створити пустий масив та :
 //     a. заповнити його 50 парними числами за допомоги циклу.
-let array=[];
-for (let i = 2; i < 50; i+2) {
-        if(i % 2 === 0){
-            console.log(array[i]);
-
-        }
-    }
+let array = [];
+for (let i = 1; i < 100; i += 2) {
+    array[array.length] = i;
+}
 console.log(array)
 
 //     b. заповнити його 50 непарними числами за допомоги циклу.
+
 //     c. Заповнити масив 20ма рандомними числами. (Google: Generate random number JS)
-
-
-
+// let arr = [];
+// for (let i = 0; i < 20; i++) {
+//     arr[i] = Math.random();
+// }
+// console.log(arr)
 
 // d. Заповнити масив 20ма рандомними чисалами в діапазоні від 8 до 732 (Google: Generate random number JS)
 // let arr = [];
-// for (i = 2; i < 20; i++){
-//     arr[i]= Math.floor( Math.random()*732) + 8;
-//     if(i % 2===0){
-//         console.log(arr[i])
-//     }
+// for (let i = 0; i < 20; i++) {
+//     arr[i] = Math.floor(Math.random() * (732 - 8)) + 8;
 // }
-// console.log(arr)
+//
+// console.log(arr);
+
 // 2. Вивести за допомогою console.log кожен третій елемен
-// let arr = [];
-// for (i = 2; i < 20; i++){
-//     arr[i]= Math.floor( Math.random()*732) + 8;
-//     if(i % 2===0){
-//         console.log(arr[i])
-//     }
-// }
-// console.log(arr)
+let arr = [];
+for (let i = 0; i < array.length; i += 3) {
+    // arr[arr.length] = array[i]
+    arr.push(array[i])
+}
+console.log(arr)
 // 3. Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним.
 // 4. Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним та записати їх в новий масив
 // 5. Вивести кожен елемент масиву, сусід справа якого є парним
