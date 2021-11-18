@@ -11,6 +11,7 @@ console.log(array)
 // for (let i = 1; i < 100; i += 2) {
 //     arrayy[arrayy.length] = i;
 // }
+
 // console.log(array)
 //     c. Заповнити масив 20ма рандомними числами. (Google: Generate random number JS)
 // let arr = [];
