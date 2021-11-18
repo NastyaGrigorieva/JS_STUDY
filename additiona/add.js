@@ -1,13 +1,17 @@
 // 1. Створити пустий масив та :
 //     a. заповнити його 50 парними числами за допомоги циклу.
 let array = [];
-for (let i = 1; i < 100; i += 2) {
+for (let i = 0; i < 100; i += 2) {
     array[array.length] = i;
 }
 console.log(array)
 
 //     b. заповнити його 50 непарними числами за допомоги циклу.
-
+// let arrayy = [];
+// for (let i = 1; i < 100; i += 2) {
+//     arrayy[arrayy.length] = i;
+// }
+// console.log(array)
 //     c. Заповнити масив 20ма рандомними числами. (Google: Generate random number JS)
 // let arr = [];
 // for (let i = 0; i < 20; i++) {
@@ -24,13 +28,18 @@ console.log(array)
 // console.log(arr);
 
 // 2. Вивести за допомогою console.log кожен третій елемен
-let arr = [];
-for (let i = 0; i < array.length; i += 3) {
-    // arr[arr.length] = array[i]
-    arr.push(array[i])
-}
-console.log(arr)
+// let arr = [];
+// for (let i = 0; i < array.length; i += 3) {
+//     // arr[arr.length] = array[i]
+//     arr.push(array[i])
+// }
+// console.log(arr)
 // 3. Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним.
+// let arr = [];
+// for (let i = 0; i < array.length; i += 2) {
+//     arr[arr.length] = array[i]
+// }
+// console.log(arr)
 // 4. Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним та записати їх в новий масив
 // 5. Вивести кожен елемент масиву, сусід справа якого є парним
 // EXAMPLE: [ 1, 2, 3, 5, 7, 9, 56, 8, 67 ] -> Має бути виведено 1, 9, 56
