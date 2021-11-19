@@ -11,7 +11,7 @@
 // min(120, 369, 98);
 
 // - створити функцію яка приймає три числа та виводить найбільше. (Без Math.max!)
-// function Max(max1, max2, max3) {
+// function maxN(max1, max2, max3) {
 //     if (max1 > max2 && max1 > max3) {
 //         console.log(max1);
 //     } else if (max2 > max1 && max2 > max3) {
@@ -20,11 +20,11 @@
 //         console.log(max3);
 //     }
 // };
-// Max(69.159,666, 159);
+// maxN(69.159,666, 159);
 
 // - створити функцію яка повертає найбільше число з масиву
-//  let array=[984,56,7]
-// function Max(array) {
+//  let array=[984,56,7];
+// function max(array) {
 //     if (array[0] > array[1] && array[0] > array[2]) {
 //         console.log(array[0]);
 //     } else if (array[1] > array[0] && array[1] >array[2]) {
@@ -33,7 +33,7 @@
 //         console.log(array[2]);
 //     }
 // };
-// Max(array);
+//return max(array);
 
 // - створити функцію яка повертає найменьше число з масиву
 
