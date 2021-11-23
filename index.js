@@ -65,7 +65,6 @@
 //     document.write( `<ul>`)
 //     for (let i = 0; i < arr.length; i++) {
 //         document.write( `<li>${arr[i]}</li>`)
-//         console.log(arr[i])
 //     }
 //     document.write( `</ul>`)
 //
@@ -83,11 +82,8 @@ const array = [
 ];
 
 const primitive = (arr) => {
-
     for (let i = 0; i < arr.length; i++) {
-        document.write(`<div>${arr[0]}</div>`, `<div>${arr[1]}</div>`, `<div>${arr[2]}</div>`)
-        console.log(arr[i])
+        document.write(`<div>${arr[i].id} - ${arr[i].age} - ${arr[i].name}</div>`)
     }
-
 }
 primitive(array);
