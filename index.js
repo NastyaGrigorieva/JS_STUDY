@@ -94,12 +94,8 @@
 
 // - Напишіть функцію capitalize(str), яка повертає рядок, у якому кожне слово починається з великої літери.
 
-let capitalize = (str) => {
+let capitalize = (str) => str.split(' ').map(([first, ...rest]) => first.toUpperCase() + rest.join('')).join(' ');
 
-    return str[0].toUpperCase() + str.slice(1)
-    // const replace = capitalize.replaceAll('a','A');
-};
 console.log(capitalize('steh auf - lindemann'));
 
-// console.log(replace);
 
