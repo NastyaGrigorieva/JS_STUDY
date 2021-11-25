@@ -71,8 +71,6 @@ console.log(random(6, 96));
 
 // - створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого,
 // або навпаки в залежності від значення аргументу direction.
-
-
 //     let nums = [11,21,3];
 // sortNums('ascending') // [3,11,21]
 // sortNums('descending') // [21,11,3]
@@ -81,24 +79,36 @@ let sortNums = (array, direction) => {
     if (direction === 'ascending') return array.sort((a, b) => a - b);
     if (direction === 'descending') return array.sort((a, b) => b - a);
 };
-console.log(sortNums([1, 56, 9, -20, 2345, 34, 98, 5], 'desc'));
+console.log(sortNums([5,56,4,46,7,8,546453,3536,7,56,9], 'descending'));
 
 // - є масив
-// let coursesAndDurationArray = [
-//     {title: 'JavaScript Complex', monthDuration: 5},
-//     {title: 'Java Complex', monthDuration: 6},
-//     {title: 'Python Complex', monthDuration: 6},
-//     {title: 'QA Complex', monthDuration: 4},
-//     {title: 'FullStack', monthDuration: 7},
-//     {title: 'Frontend', monthDuration: 4}
-// ];
+let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
 
 
 // -- відсортувати його за спаданням за monthDuration
 
+// let newSort = coursesAndDurationArray.sort((a, b) => b.monthDuration - a.monthDuration);
+// console.log(newSort);
+
 
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
 
+// let filter = coursesAndDurationArray.filter((value) => {
+//     return value.monthDuration > 5;
+// });
 
+
+// console.log(filter)
 // - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
 // document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
+let string = (str, n) => {
+
+};
+document.write(string('наслаждение', 3))
