@@ -14,7 +14,7 @@ const normalizer = (sring) => {
 
     qwe = qwe.map((char, i) => {
         if (badArray.includes(char)) {
-            return badArray.includes(qwe[i-1]) ? '' : ' ';
+            return badArray.includes(qwe[i - 1]) ? '' : ' ';
         }
         return char;
     })
@@ -79,7 +79,7 @@ let sortNums = (array, direction) => {
     if (direction === 'ascending') return array.sort((a, b) => a - b);
     if (direction === 'descending') return array.sort((a, b) => b - a);
 };
-console.log(sortNums([5,56,4,46,7,8,546453,3536,7,56,9], 'descending'));
+console.log(sortNums([5, 56, 4, 46, 7, 8, 546453, 3536, 7, 56, 9], 'descending'));
 
 // - є масив
 let coursesAndDurationArray = [
@@ -94,8 +94,8 @@ let coursesAndDurationArray = [
 
 // -- відсортувати його за спаданням за monthDuration
 
-// let newSort = coursesAndDurationArray.sort((a, b) => b.monthDuration - a.monthDuration);
-// console.log(newSort);
+// let sort = coursesAndDurationArray.sort((a, b) => b.monthDuration - a.monthDuration);
+// console.log(sort);
 
 
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
@@ -109,6 +109,13 @@ let coursesAndDurationArray = [
 // - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
 // document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
 let string = (str, n) => {
+    let arr = [];
 
+    for (let i = 0; i < str.length; i += n) {
+        console.log(i)
+        arr.push(str.slice(i, i + n));
+    }
+
+    return arr
 };
-document.write(string('наслаждение', 3))
+console.log(string('наслаждениеqweddsds', 2));
