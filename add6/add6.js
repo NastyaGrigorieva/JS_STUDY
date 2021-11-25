@@ -123,10 +123,12 @@ console.log(sort);
 // document.writeln(cutString(str, 5)) // 'Сила тяжести приложена к центру'
 
 let cutString = (str, n) => {
+    let arr = str.split(' ');
 
-    let arr = str.slice(0,n).s;
-    return arr.length;
+    if(arr.length > n) {
+        arr = arr.slice(0, n);
+    }
 
-
+    return arr.join(' ')
 }
 document.writeln(cutString("Сила тяжести приложена к центру масс тела", 5))
