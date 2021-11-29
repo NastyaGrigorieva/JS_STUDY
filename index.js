@@ -9,7 +9,9 @@
 //     this.email = email;
 //     this.phone = phone;
 // }
+// 
 //
+// const arr = [];
 // const array = [
 //     new User(1, 'Vas', 'Illiy', 'Vas@gmail.com', 7845692057),
 //     new User(2, 'Vasis', 'Dash', 'Vas@gmail.com', 7845692057),
