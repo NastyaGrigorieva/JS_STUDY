@@ -24,7 +24,7 @@
 //     new User(9, 'w', 'Iliy', 'Vas@gmail.com', 7845692057),
 //     new User(10, 'Vasdc', 'khdgjy', 'Vas@gmail.com', 7845692057),
 // ]
-// console.log(array)
+// console.log(array.push(arr))
 
 
 // - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
