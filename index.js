@@ -51,12 +51,12 @@
 
 // h) отримує всі елементи 'a' та додає їм клас element_XXX. Де XXX - текстовий контент елементу a
 
-// let a = document.getElementsByTagName('a');
-// for (let aElement of a) {
-//     aElement.classList.add('element_XXX');
-//     let XXX = aElement.innerText
-// }
-// //?
+let a = document.getElementsByTagName('a');
+for (let aElement of a) {
+    let XXX = aElement.innerText
+    aElement.classList.add(`element_${XXX}`);
+}
+
 
 
 // i) отримує всі елементи 'sub-header' та змінює колір фону. Фон отримати з prompt()
