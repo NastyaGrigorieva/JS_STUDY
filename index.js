@@ -62,29 +62,36 @@
 // i) отримує всі елементи 'sub-header' та змінює колір фону. Фон отримати з prompt()
 
 // let subHeader = document.getElementsByClassName('sub-header');
-// prompt('Введите цвет')
+// const color = prompt('Введите цвет')
 // for (let subHeaderElement of subHeader) {
-//     subHeaderElement.style.background = 'red'
+//     subHeaderElement.style.background = color
 // }
-// //?
+
 
 
 // j) отримує всі елементи 'sub-header' та змінює колір тексту у видаку якщо текст елемнту = content 2 segment . Колір отримати з prompt()
 
 // let subHeader = document.getElementsByClassName('sub-header');
-// prompt('Введите цвет')
+// const color = prompt('Введите цвет')
 // for (let subHeaderElement of subHeader) {
-//     subHeaderElement.style.background = 'blue';
+//     subHeaderElement.style.background = color;
 // }
 
 
 // k) отримує елемент з класом content_1 та заміняє  в ньому тест на довільний. Текст отримати з prompt()
-//
+
+// const text = prompt('Введите текст');
 // let content_1 = document.getElementsByClassName('content_1');
-// prompt('mhgckhcf')           ?
-// content_1.innerText = promt('mghfkcdtd');
+//
+// for (let content1Element of content_1) {
+//     content1Element.innerText = text;
+//
+// }
+// content_1.innerText = text;
+// console.log(text)
 
 // l) отримати елементи p та змінити їм padding на 20px
+
 //  let p = document.getElementsByTagName('p');
 // for (let pElement of p) {
 //     pElement.style.padding = '20px'
