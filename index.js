@@ -79,9 +79,10 @@
 
 
 // k) отримує елемент з класом content_1 та заміняє  в ньому тест на довільний. Текст отримати з prompt()
-prompt('mhgckhcf')
-let content_1 = document.getElementsByClassName('content_1');
-content_1.innerText = promt('mghfkcdtd');
+//
+// let content_1 = document.getElementsByClassName('content_1');
+// prompt('mhgckhcf')           ?
+// content_1.innerText = promt('mghfkcdtd');
 
 // l) отримати елементи p та змінити їм padding на 20px
 //  let p = document.getElementsByTagName('p');
