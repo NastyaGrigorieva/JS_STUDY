@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    border: solid 4px #fa4c4c;
+    margin: 25px;
+
+}
+
+.divfather{
+    display: flex;
+    border: solid 1px mediumslateblue;
+    column-gap: 10px;
+    margin: 5px;
+}
+
+.divfather > div {
+    text-align: center;
+    width: 100%;
+    margin: 5px;
+    padding: 2px;
+    border: solid 1px mediumslateblue;
+}
+
+.title {
+    text-align: center;
+    margin: 5px;
+    padding: 2px;
+    border: solid 1px mediumslateblue;
+}
+
+.classForUl {
+    margin: 5px;
+    padding: 20px;
+    border: solid 1px mediumslateblue;
+}
+
+.classForUl > li {
+    margin: 5px;
+    padding: 2px;
+    border: solid 1px mediumslateblue;
+}
