@@ -108,19 +108,12 @@ const array = [];
 for (const item of array) {
     const item = document.getElementsByTagNameNS('h2');
     const ul = document.createElement('ul');
-
-    for (const item of arrayElement) {
-        let li = document.createElement('li');
-        li.innerText = item;
-        ul.appendChild(li);
-        array.push(li)
-
-    }
+    let li = document.createElement('li');
 
 
-
-
-
+    li.innerText = item;
+    ul.appendChild(li);
+    array.push(li)
 
 
 }
