@@ -157,7 +157,7 @@ for (const arrayElement of coursesArray) {
     title.innerText = arrayElement.title;
     div.classList.add('wrapper');
     title.classList.add('title');
-    divFather.classList.add('divfather');
+    divFather.classList.add('divFather');
     ul.classList.add('classForUl');
 
     monthDuration.innerText = arrayElement.monthDuration;

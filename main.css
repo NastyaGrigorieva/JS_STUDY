@@ -9,14 +9,14 @@
 
 }
 
-.divfather{
+.divFather{
     display: flex;
     border: solid 1px mediumslateblue;
     column-gap: 10px;
     margin: 5px;
 }
 
-.divfather > div {
+.divFather > div {
     text-align: center;
     width: 100%;
     margin: 5px;
