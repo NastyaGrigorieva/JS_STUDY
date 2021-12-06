@@ -15,16 +15,16 @@
 
 // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.
 // При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
-
-// document.getElementById('button').onclick = function () {
+//
+// document.getElementById('button1').onclick = function () {
 //   const age =   document.getElementById('age').value;
 //     if (!age) {
 //         alert('а где собсна возраст');
 //     } else if (+age < 18) {
 //         alert('маловато будет');
 //     }else if (+age < 21) {
-// //         alert('староват');
-// //     } else {
+//         alert('староват');
+//     } else {
 //         alert('Здарова');
 //     }
 // };
@@ -44,26 +44,26 @@
 //     Вывести список комментариев в документ, каждый в своем блоке.
 //     Добавьте каждому комментарию по кнопке для сворачивания его body.
 
-const comments = [
-    {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
-    {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
-    {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
-]
-let divFather = document.createElement('div');
-for (const item of comments) {
-    const div = document.createElement('div');
-    const h2 = document.createElement('h2');
-    const p = document.createElement('p');
-    const btn = document.createElement('button');
-
-    h2.innerText = item.title;
-    p.innerHTML = item.body;
-    btn.innerHTML = 'тыкнуть'
-
-    div.append(h2, p, btn);
-    divFather.append(div);
-}
-document.body.appendChild(divFather);
-
-
-
+// const comments = [
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+// ]
+// let divFather = document.createElement('div');
+// for (const item of comments) {
+//     const div = document.createElement('div');
+//     const h2 = document.createElement('h2');
+//     const p = document.createElement('p');
+//     const btn = document.createElement('button');
+//
+//     h2.innerText = item.title;
+//     p.innerHTML = item.body;
+//     btn.innerHTML = 'тыкнуть'
+//
+//     div.append(h2, p, btn);
+//     divFather.append(div);
+// }
+// document.body.appendChild(divFather);
+//
+//
+//
