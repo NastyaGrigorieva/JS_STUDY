@@ -52,15 +52,15 @@ const comments = [
 let divFather = document.createElement('div');
 for (const item of comments) {
     const div = document.createElement('div');
-    const h3 = document.createElement('h3');
+    const h2 = document.createElement('h2');
     const p = document.createElement('p');
     const btn = document.createElement('button');
 
-    h3.innerText = item.title;
+    h2.innerText = item.title;
     p.innerHTML = item.body;
     btn.innerHTML = 'тыкнуть'
 
-    div.append(h3, p, btn);
+    div.append(h2, p, btn);
     divFather.append(div);
 }
 document.body.appendChild(divFather)
