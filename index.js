@@ -63,7 +63,7 @@ for (const item of comments) {
     div.append(h2, p, btn);
     divFather.append(div);
 }
-document.body.appendChild(divFather)
+document.body.appendChild(divFather);
 
 
 
