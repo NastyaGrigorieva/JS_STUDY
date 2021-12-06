@@ -6,11 +6,34 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Title</title>
+    <style>
+        .menu {
+            cursor: pointer;
+        }
+        .menu.hidden ul {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <ul class="menu"></ul>
 
 
+    <div id="text"><h2>а я вот-вот исчезну</h2></div>
+        <input type="button" id="button" value="Нажми на меня"/>
+
+
+    <input type="text" id="age">
+    <input type="button" id="button1" value="возраст">
+
+
+    <div class="menu">
+        <h4 class="title">нажми на меня</h4>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
 
     <script src="index.js"></script>
 </body>
