@@ -2,6 +2,24 @@
 //     При лівому кліку миші вивести в консоль інформацію про блок або елемент на який відбувся клік.
 //     Інформація яку потрібно вивести: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
 
+// const elements = document.querySelectorAll("body > *");
+//
+// elements.forEach(item => {
+//     item.addEventListener('click', (e) => {
+//         console.log('Назва тегу:', e.target.localName);
+//         console.log('список ід:', e.target.id);
+//         console.log('список класів:', e.target.classList.value);
+//
+//         console.log('розміри:', `${e.target.clientHeight} * ${e.target.clientWidth}`);
+//     })
+// })
+
+// - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
+//     При лівому кліку миші  зробить pop-up (спливаючий блок) в якому буде вся інформація про блок.
+//     Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
+//
+
+const popup = document.createElement('div');
 const elements = document.querySelectorAll("body > *");
 
 elements.forEach(item => {
@@ -12,25 +30,8 @@ elements.forEach(item => {
 
         console.log('розміри:', `${e.target.clientHeight} * ${e.target.clientWidth}`);
     })
-})
-
-// - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
-//     При лівому кліку миші  зробить pop-up (спливаючий блок) в якому буде вся інформація про блок.
-//     Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
-//
-
-const popup = document.createElement('div');
-
-
-
-
-
-
-
-
-
-
-
+});
+popup.addEventListener();
 
 
 // -- взять массив пользователей
