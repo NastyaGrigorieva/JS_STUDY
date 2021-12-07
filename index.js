@@ -56,10 +56,10 @@
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додаткова частина для завдання)
 
-// let input1 = document.createElement('input');
-// let input2 = document.createElement('input');
-// let input3 = document.createElement('input');
-// let button1 = document.createElement('button');
+// const input1 = document.createElement('input');
+// const input2 = document.createElement('input');
+// const input3 = document.createElement('input');
+// const button1 = document.createElement('button');
 //
 // button1.innerText = 'cоздай меня';
 // document.body.append(input1, input2, input3, button1);
