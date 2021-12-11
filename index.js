@@ -27,7 +27,7 @@ const model = document.forms.car.model;
 const type = document.forms.car.type;
 const volume = document.forms.car.volume;
 const button2 = document.getElementById('button');
-const item = 'keyCar';
+const item = 'key';
 
 const form = (modelCar, typeCar, volumeCar) => {
     const arr = JSON.parse(localStorage.getItem(item)) || [];
