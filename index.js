@@ -28,7 +28,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 
                             if (post.id === comment.postId) {
                                 const divCard = document.createElement('div');
-                                divCard.classList.add('cardComments');
+                                divCard.classList.add('comments');
                                 divCard.innerHTML = `
                                         <h2>id: ${comment.id}</h2>
                                         <h2>name: ${comment.name}</h2>

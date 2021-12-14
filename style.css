@@ -1,0 +1,22 @@
+*{
+    margin: 15px;
+}
+.father{
+background: #c1f5ac;
+
+}
+button{
+    background: #53f58c;
+    color: #eadfdf;
+    border: #78fab0 2px solid;
+}
+.card{
+    border: #0b6c32 5px dashed;
+ background: #10a94f;
+    color: #c1f5ac;
+}
+.comments{
+ background: #77fa74;
+    color: #08b955;
+    border: 2px #86a610 solid;
+}
