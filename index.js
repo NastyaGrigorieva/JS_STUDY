@@ -9,7 +9,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
     })
     .then(posts => {
         const father = document.createElement('div');
-        father.classList.add('wraper');
+        father.classList.add('father');
         for (const post of posts) {
             const div = document.createElement('div');
             div.classList.add('card');
