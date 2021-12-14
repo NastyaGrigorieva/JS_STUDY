@@ -1,0 +1,18 @@
+body{
+    margin: 7px;
+    background: #c1f5ac;
+}
+button{
+    background: #0b6c32;
+    color: honeydew;
+}
+h2,h3,h4{
+    background: #10a94f;
+    color: #c1f5ac;
+
+
+}
+img{
+    border-radius: 35px;
+    border:  5px #c96262 dashed;
+}
