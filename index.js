@@ -207,6 +207,64 @@
 //
 
 
+function wakeUp(randomNum, callback) {
+    setTimeout(() => {
+        if (randomNum > 0.25) {
+            console.log('Дратути');
+            callback('Я памерэло', null);
+        } else {
+            callback(null, 'Я памерэло')
+        }
+    }, 500)
+}
+
+function brushPerushki(callback) {
+    setTimeout(() => {
+        console.log('Чищу зубки');
+        cb(null, 'Я памерэло');
+    }, 300);
+}
+
+function wabrushHardsh(callback) {
+    setTimeout(() => {
+        console.log('Вымой всю хату');
+        callback    }, 500);
+}
+
+function coocingHard(callback) {
+    setTimeout(() => {
+        console.log('Наготовь еды на месяц за пару часов');
+        callback(null, 'Ленивая тварь');
+    }, 500);
+}
+
+wakeUp(Math.random(), (err, success) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    brushPerushki((err, success) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        console.log(success);
+        wabrushHardsh((err, success) => {
+            if (err) {
+                console.error(err);
+                return;
+            }
+            console.log(success);
+            coocingHard('bad', (err, success) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+                console.log(success);
+            });
+        });
+    });
+});
 
 
 
