@@ -1,94 +1,68 @@
-// Все робити за допомоги js.
-// - створити блок,
-// const div = document.createElement('div');
-//     - додати йому класи wrap, collapse, alpha, beta
-// div.classList.add('wrap');
-// div.classList.add('collapce');
-// div.classList.add('alpha');
-// div.classList.add('beta');
-// - додати стилі(довільні значення) : колір фону, колір тексту, розмір тексту
-// div.style.padding = "20px";
-// div.style.margin = "5px";
-// div.style.background = "blue";
-// div.style.color = "gray";
-// // - додати цей блок в body.
-// document.body.appendChild(div);
-// - клонувати його повністю, та додати клон в body.
-//
-// document.body.appendChild(div.cloneNode(true));
+// В index.html
+// 1 получить массив объектов user с endpoint`а https://jsonplaceholder.typicode.com/users
 
-// - Є масив:
-//     ['Main','Products','About us','Contacts']
-// Взяти файл template1.html та додати в нього скріпт котрий для кожного елементу масиву
-// створює li та додає його до блоку .menu
-// Завдання робити через цикли.
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
 
-// const ul = document.getElementsByClassName('menu')[0];
-// const arrSrt = ['Main','Products','About us','Contacts'];
-// for (item of arrSrt) {
-//     const li = document.createElement('li');
-//     li.innerText = item;
-//     ul.appendChild(li);
-//
-// };
-//
-// - Є масив
-// let coursesAndDurationArray = [
-//     {title: 'JavaScript Complex', monthDuration: 5},
-//     {title: 'Java Complex', monthDuration: 6},
-//     {title: 'Python Complex', monthDuration: 6},
-//     {title: 'QA Complex', monthDuration: 4},
-//     {title: 'FullStack', monthDuration: 7},
-//     {title: 'Frontend', monthDuration: 4}
-// ];
-// Для кожного елементу масиву зробити блок в якому вивести інформацію про title та monthDuration
-// Завдання робити через цикли.
-//
-//  let coursesAndDurationArray = [
-//     {title: 'JavaScript Complex', monthDuration: 5},
-//     {title: 'Java Complex', monthDuration: 6},
-//     {title: 'Python Complex', monthDuration: 6},
-//     {title: 'QA Complex', monthDuration: 4},
-//     {title: 'FullStack', monthDuration: 7},
-//     {title: 'Frontend', monthDuration: 4}
-// ];
-// for (const arrayElement of coursesAndDurationArray) {
-//     const div = document.createElement('div');
-//     const h2 = document.createElement('h2');
-//     h2.innerText = `${arrayElement.title} - ${arrayElement.monthDuration}`;
-//
-//     div.appendChild(h2);
-//     document.body.appendChild(div);
+// 2 Вывести id,name всех user в index.html. Отдельный блок для каждого user.
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => {
+        return response.json();
+    })
+    .then(users => {
+        const father = document.createElement('div');
+        father.classList.add('father');
+        for (const user of users) {
+            const div = document.createElement('div');
+            div.classList.add('users');
+            div.innerHTML = `
+                    <h3>id: ${user.id}</h3>
+                    <h2>name: ${user.name}</h2> `;
+            father.appendChild(div);
+            document.body.appendChild(father);
+        }
+    });
 
-// };;;;;;;;;;;; // это на всякий случай;
+// 3 Добавить каждому блоку кнопку/ссылку , при клике на которую происходит переход на страницу user-details.html,
+//  которая имеет детальную информацию про объект на который кликнули
 
 
-//
-// - Є масив
-let coursesAndDurationArray = [
-    {title: 'JavaScript Complex', monthDuration: 5},
-    {title: 'Java Complex', monthDuration: 6},
-    {title: 'Python Complex', monthDuration: 6},
-    {title: 'QA Complex', monthDuration: 4},
-    {title: 'FullStack', monthDuration: 7},
-    {title: 'Frontend', monthDuration: 4}
-];
-// За допомоги скріпта для кожного елементу масиву зробити <div class='item'> ,
-// в якому буде <h1 class='heading'>  з title  елементу, та <p class='description'> з monthDuration елементу.
-//     Завдання робити через цикли.
 
-for (const arrayElement of coursesAndDurationArray) {
-    const div = document.createElement('div');
-    const h2 = document.createElement('h2');
-    const p = document.createElement('p');
 
-    div.classList.add('item');
-    h2.classList.add('heading');
-    p.classList.add('description');
 
-    p.innerText = arrayElement.monthDuration;
-    h2.innerText = arrayElement.title;
 
-    div.append(h2, p);
-    document.body.append(div);
-}
+// На странице user-details.html:
+// 4 Вывести всю, без исключения, информацию про объект user на кнопку/ссылку которого был совершен клик ранее.
+
+
+// 5 Добавить кнопку "post of current user", при клике на которую, появляются title всех постов текущего юзера
+// (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
+
+
+
+// 6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html,
+// которая имеет детальную информацию про текущий пост.
+
+
+
+
+
+
+// На странице post-details.html:
+// 7 Вывести всю, без исключения, информацию про объект post на кнопку/ссылку которого был совершен клик ранее.
+
+
+
+// 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации
+//  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
+
+
+
+// Стилизация проекта -
+// index.html - все блоки с user - по 2 в ряд. кнопки/ссылки находяться под информацией про user.
+// user-details.html - блок с информацией про user вверху страницы. Кнопка ниже, на 90% ширины страницы, по центру.
+// блоки с краткой информацией про post - в ряд по 5 объектов.
+// post-details.html - блок с информацией про пост вверху. Комментарии - по 4 в ряд.
+// Все без исключения элементы, который характеризируют user,post,comment  визуализировать, так, что бы было видно их
+// блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)
