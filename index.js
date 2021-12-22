@@ -30,8 +30,6 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
 
 
-
-
 // На странице user-details.html:
 // 4 Вывести всю, без исключения, информацию про объект user на кнопку/ссылку которого был совершен клик ранее.
 
