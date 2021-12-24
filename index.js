@@ -6,6 +6,11 @@ fetch('https://jsonplaceholder.typicode.com/users')
     .then((json) => console.log(json));
 
 // 2 Вывести id,name всех user в index.html. Отдельный блок для каждого user.
+
+// 3 Добавить каждому блоку кнопку/ссылку , при клике на которую происходит переход на страницу user-details.html,
+//  которая имеет детальную информацию про объект на который кликнули
+
+
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => {
         return response.json();
@@ -18,30 +23,29 @@ fetch('https://jsonplaceholder.typicode.com/users')
             div.classList.add('users');
             div.innerHTML = `
                     <h3>id: ${user.id}</h3>
-                    <h2>name: ${user.name}</h2> `;
+                     <hr>    
+                    <h2>name: ${user.name}</h2> 
+                     <hr>    
+                    <button> <a href ='user-details.html'</a>user-details </button>       
+                    
+                                    `;
             father.appendChild(div);
             document.body.appendChild(father);
         }
+
     });
-
-// 3 Добавить каждому блоку кнопку/ссылку , при клике на которую происходит переход на страницу user-details.html,
-//  которая имеет детальную информацию про объект на который кликнули
-
 
 
 
 // На странице user-details.html:
 // 4 Вывести всю, без исключения, информацию про объект user на кнопку/ссылку которого был совершен клик ранее.
 
-
 // 5 Добавить кнопку "post of current user", при клике на которую, появляются title всех постов текущего юзера
 // (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
 
 
-
 // 6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html,
 // которая имеет детальную информацию про текущий пост.
-
 
 
 
