@@ -26,7 +26,8 @@ fetch('https://jsonplaceholder.typicode.com/users')
                      <hr>    
                     <h2>name: ${user.name}</h2> 
                      <hr>    
-                    <button> <a href ='user-details.html'</a>user-details </button>       
+                    <button> <a href ='user-details.html '</a>user-details </button>       
+                    
                     
                                     `;
             father.appendChild(div);
@@ -36,25 +37,18 @@ fetch('https://jsonplaceholder.typicode.com/users')
     });
 
 
-
 // На странице user-details.html:
 // 4 Вывести всю, без исключения, информацию про объект user на кнопку/ссылку которого был совершен клик ранее.
 
 // 5 Добавить кнопку "post of current user", при клике на которую, появляются title всех постов текущего юзера
 // (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
 
-
 // 6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html,
 // которая имеет детальную информацию про текущий пост.
 
 
-
-
-
 // На странице post-details.html:
 // 7 Вывести всю, без исключения, информацию про объект post на кнопку/ссылку которого был совершен клик ранее.
-
-
 
 // 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации
 //  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
