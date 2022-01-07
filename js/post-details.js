@@ -1,43 +1,40 @@
-// fetch('https://jsonplaceholder.typicode.com/posts')
-//     .then(response => {
-//         return response.json();
-//     })
-//     .then(posts => {
-//         const father = document.createElement('div');
-//         father.classList.add('father');
-//         for (const post of posts) {
-//             const div = document.createElement('div');
-//             div.classList.add('card');
-//             div.innerHTML = `
-//                         <h3>id: ${post.id}</h3>
-//                         <h4>title: ${post.title}</h4>
-//                         <h5>body: ${post.body}</h5>
-//                         `;
-//             const button = document.createElement('button');
-//             button.innerText = 'ткни сюды';
-//             button.onclick = (id) => {
-//                 fetch('https://jsonplaceholder.typicode.com/posts/' + post.id + '/comments')
-//                     .then(response => response.json())
-//                     .then(comments => {
-//                         for (const comment of comments) {
-//
-//                             if (post.id === comment.postId) {
-//                                 const divCard = document.createElement('div');
-//                                 divCard.classList.add('comments');
-//                                 divCard.innerHTML = `
-//                                         <h2>id: ${comment.id}</h2>
-//                                         <h2>name: ${comment.name}</h2>
-//                                         <h2>email: ${comment.email}</h2>
-//                                         <h5>body: ${comment.body}</h5>
-//                                         `;
-//                                 div.appendChild(divCard)
-//                             }
-//                             button.disabled = true;
-//                         }
-//                     })
-//             }
-//             div.appendChild(button);
-//             father.appendChild(div);
-//             document.body.appendChild(father);
-//         }
-//     });
+const params = (new URL(location)).searchParams;
+const user = JSON.parse(params.get('user'));
+
+document.write(`
+<b>name:</b> ${user.name} <br/>
+<b>email:</b>${user.email} <br/>
+<b>phone:</b>${user.phone} <br/>
+....<br/>
+<button id="posts">show posts current user</button>
+<hr/>`)
+
+let button = document.getElementById('posts');
+button.onclick = () => renderPosts(user.id);
+
+
+function renderPosts(id) {
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
+        .then(value => value.json())
+        .then(posts => {
+            console.log(111)
+            let postsBox = document.getElementsByClassName('posts-box')[0]
+            for (const post of posts) {
+                let divPost = document.createElement('div');
+                let postDetailsBtn = document.createElement('button');
+
+                divPost.innerText = `${post.title}`;
+                postDetailsBtn.innerText = 'show post details';
+
+                postDetailsBtn.onclick = () => location.href = `post-details.html?userId = ${post.id.toString()}`;
+
+                // postDetailsBtn.innerHTML = `<form action="post-details.html" target="_blank">
+                //     <button type="submit">Post of current user</button>
+                // </form>`;
+
+                postsBox.appendChild(divPost)
+                divPost.appendChild(postDetailsBtn)
+                document.body.appendChild(postsBox)
+            }
+        })
+}

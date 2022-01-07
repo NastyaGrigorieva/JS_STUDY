@@ -29,13 +29,12 @@ fetch('https://jsonplaceholder.typicode.com/users')
                      <hr>`;
             button.innerText = `DeTaIlS`;
 
-             button.addEventListener('click', (e) => {
-                 e.preventDefault();
-                 const array = users.filter (value => value.id === user.id);
-                 localStorage.setItem('user', JSON.stringify(array));
-                 location.href = '../html/user-details.html';
-             });
-
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const array = users.filter(value => value.id === user.id);
+                localStorage.setItem('user', JSON.stringify(array));
+                location.href = '../html/user-details.html';
+            });
 
 
             father.appendChild(div);
@@ -61,7 +60,6 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
 // 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации
 //  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
-
 
 
 // Стилизация проекта -
