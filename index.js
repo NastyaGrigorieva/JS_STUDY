@@ -35,4 +35,4 @@ users.forEach(user => {
     }
     div.append(content, btn);
     container.appendChild(div);
-})
+});
