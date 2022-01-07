@@ -20,17 +20,26 @@ fetch('https://jsonplaceholder.typicode.com/users')
         father.classList.add('father');
         for (const user of users) {
             const div = document.createElement('div');
+            const button = document.createElement('button');
             div.classList.add('users');
             div.innerHTML = `
                     <h3>id: ${user.id}</h3>
                      <hr>    
                     <h2>name: ${user.name}</h2> 
-                     <hr>    
-                    <button> <a href ='user-details.html '</a>user-details </button>       
-                    
-                    
-                                    `;
+                     <hr>`;
+            button.innerText = `DeTaIlS`;
+
+             button.addEventListener('click', (e) => {
+                 e.preventDefault();
+                 const array = users.filter (value => value.id === user.id);
+                 localStorage.setItem('user', JSON.stringify(array));
+                 location.href = '../html/user-details.html';
+             });
+
+
+
             father.appendChild(div);
+            div.appendChild(button);
             document.body.appendChild(father);
         }
 
