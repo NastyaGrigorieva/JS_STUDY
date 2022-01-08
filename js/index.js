@@ -6,9 +6,6 @@
 // 3 Добавить каждому блоку кнопку/ссылку , при клике на которую происходит переход на страницу user-details.html,
 //  которая имеет детальную информацию про объект на который кликнули
 
-
-
-
 // На странице user-details.html:
 // 4 Вывести всю, без исключения, информацию про объект user на кнопку/ссылку которого был совершен клик ранее.
 
@@ -37,7 +34,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
             let btn = document.createElement('button');
             btn.innerText = 'Details';
             div.append(btn);
-            btn.onclick = () => location.href = `../html/user-details.html?user=${JSON.stringify(user)}`;
+            btn.onclick = () => location.href = `user-details.html?user=${JSON.stringify(user)}`;
 
             usersWrap.appendChild(div);
         }
