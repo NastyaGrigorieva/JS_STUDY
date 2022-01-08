@@ -1,48 +1,12 @@
 // В index.html
 // 1 получить массив объектов user с endpoint`а https://jsonplaceholder.typicode.com/users
 
-fetch('https://jsonplaceholder.typicode.com/users')
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-
 // 2 Вывести id,name всех user в index.html. Отдельный блок для каждого user.
 
 // 3 Добавить каждому блоку кнопку/ссылку , при клике на которую происходит переход на страницу user-details.html,
 //  которая имеет детальную информацию про объект на который кликнули
 
 
-fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => {
-        return response.json();
-    })
-    .then(users => {
-        const father = document.createElement('div');
-        father.classList.add('father');
-        for (const user of users) {
-            const div = document.createElement('div');
-            const button = document.createElement('button');
-            div.classList.add('users');
-            div.innerHTML = `
-                    <h3>id: ${user.id}</h3>
-                     <hr>    
-                    <h2>name: ${user.name}</h2> 
-                     <hr>`;
-            button.innerText = `DeTaIlS`;
-
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const array = users.filter(value => value.id === user.id);
-                localStorage.setItem('user', JSON.stringify(array));
-                location.href = '../html/user-details.html';
-            });
-
-
-            father.appendChild(div);
-            div.appendChild(button);
-            document.body.appendChild(father);
-        }
-
-    });
 
 
 // На странице user-details.html:
@@ -61,6 +25,23 @@ fetch('https://jsonplaceholder.typicode.com/users')
 // 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации
 //  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
 
+
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(value => value.json())
+
+    .then(value => {
+        let usersWrap = document.getElementsByClassName('users-wrap')[0];
+        for (const user of value) {
+            let div = document.createElement('div');
+            div.innerText = user.id + ' ' + user.name;
+            let btn = document.createElement('button');
+            btn.innerText = 'Details';
+            div.append(btn);
+            btn.onclick = () => location.href = `../html/user-details.html?user=${JSON.stringify(user)}`;
+
+            usersWrap.appendChild(div);
+        }
+    });
 
 // Стилизация проекта -
 // index.html - все блоки с user - по 2 в ряд. кнопки/ссылки находяться под информацией про user.

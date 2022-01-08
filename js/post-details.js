@@ -1,40 +1,47 @@
-const params = (new URL(location)).searchParams;
-const user = JSON.parse(params.get('user'));
-
-document.write(`
-<b>name:</b> ${user.name} <br/>
-<b>email:</b>${user.email} <br/>
-<b>phone:</b>${user.phone} <br/>
-....<br/>
-<button id="posts">show posts current user</button>
-<hr/>`)
-
-let button = document.getElementById('posts');
-button.onclick = () => renderPosts(user.id);
+const params = new URLSearchParams(location.search).get('userId');
+const id = JSON.parse(params);
 
 
-function renderPosts(id) {
-    fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
-        .then(value => value.json())
-        .then(posts => {
-            console.log(111)
-            let postsBox = document.getElementsByClassName('posts-box')[0]
-            for (const post of posts) {
-                let divPost = document.createElement('div');
-                let postDetailsBtn = document.createElement('button');
+fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
+    .then(value => value.json())
+    .then(posts => {
+        let postsWrap = document.getElementsByClassName('posts-wrap')[0];
+        for (const post of posts) {
+            let div = document.createElement('div');
+            let title = document.createElement('h2');
+            let body = document.createElement('p');
+            let btn = document.createElement('button');
 
-                divPost.innerText = `${post.title}`;
-                postDetailsBtn.innerText = 'show post details';
+            title.innerText = post.title;
+            body.innerText = post.body;
+            btn.innerText = 'comments';
 
-                postDetailsBtn.onclick = () => location.href = `post-details.html?userId = ${post.id.toString()}`;
+            div.appendChild(title);
+            div.appendChild(body);
+            div.appendChild(btn);
+            btn.onclick = () => {
+                btn.style = 'display: none'
 
-                // postDetailsBtn.innerHTML = `<form action="post-details.html" target="_blank">
-                //     <button type="submit">Post of current user</button>
-                // </form>`;
+                fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
+                    .then(value => value.json())
+                    .then(comments => {
+                        let ulList = document.getElementsByTagName('ul');
+                        for (const u of ulList) {
+                            u.innerText = '';
+                        }
+                        let ul = document.createElement('ul');
 
-                postsBox.appendChild(divPost)
-                divPost.appendChild(postDetailsBtn)
-                document.body.appendChild(postsBox)
-            }
-        })
-}
+                        for (const comment of comments) {
+                            let li = document.createElement('li');
+                            li.innerText = comment.name;
+                            ul.appendChild(li);
+                        }
+                        div.appendChild(ul);
+
+                    })
+            };
+
+            postsWrap.appendChild(div);
+        }
+
+    })

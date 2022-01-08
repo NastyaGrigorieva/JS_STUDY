@@ -14,13 +14,11 @@ const recursiveFunc = (obj) => {
 
         let div = document.createElement('div')
         div.innerHTML = `<b>'${item}':</b> ${obj[item]}`;
-
+        usersList.appendChild(div);
     }
 
     let postsBtn = document.createElement('button');
     postsBtn.innerText = 'post of current user';
     usersList.appendChild(postsBtn);
-    postsBtn.onclick = () => location.href = `post-details.html?userId=${user.id.toString()}`;
+    postsBtn.onclick = () => location.href = `../html/post-details.html?userId=${user.id.toString()}`;
 }
-
-recursiveFunc(user);
