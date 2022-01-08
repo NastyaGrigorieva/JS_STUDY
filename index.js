@@ -208,7 +208,7 @@
 //
 
 
-function schedule(morning, cb) {
+function wake(morning, cb) {
     setTimeout(() => {
         if (morning === 'bad') {
             console.log(`чисто -${morning} утро`);
@@ -294,7 +294,7 @@ function sleep(cb) {
     }, 100);
 }
 
-schedule('bad', (err, success) => {
+wake('bad', (err, success) => {
     if (err) {
         console.error(err);
     } else {
