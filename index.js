@@ -205,66 +205,169 @@
 //
 //
 //
+//
 
 
-function wakeUp(randomNum, callback) {
+function schedule(morning, cb) {
     setTimeout(() => {
-        if (randomNum > 0.25) {
-            console.log('Дратути');
-            callback('Я памерэло', null);
+        if (morning === 'bad') {
+            console.log(`>>> ${morning} morning`);
+            cb('this is the (dead) end', null);
         } else {
-            callback(null, 'Я памерэло')
+            cb(null, `>>> ${morning} morning`)
         }
     }, 500)
 }
 
-function brushPerushki(callback) {
+function wakeUp(cb) {
     setTimeout(() => {
-        console.log('Чищу зубки');
-        cb(null, 'Я памерэло');
+        console.log('Здаровасики');
+        cb(null, 'Я памэрла');
     }, 300);
 }
-
-function wabrushHardsh(callback) {
+function brushToosh(cb) {
     setTimeout(() => {
-        console.log('Вымой всю хату');
-        callback    }, 500);
-}
-
-function coocingHard(callback) {
-    setTimeout(() => {
-        console.log('Наготовь еды на месяц за пару часов');
-        callback(null, 'Ленивая тварь');
+        console.log('Чищу зубки');
+        cb(null, 'Я памэрло');
     }, 500);
 }
+function brushPerushki(mood, cb) {
+    setTimeout(() => {
+        console.log('Очистилась');
+        setTimeout(() => {
+            if (mood === 'bad') {
+                console.log('чистая Тварь');
+                cb('Недостаточно чистая тварь', null);
+            } else {
+                cb(null, 'Грязная тварь');
+            }
 
-wakeUp(Math.random(), (err, success) => {
+        }, 1000)
+    }, 500);
+}
+function brushHard(cb) {
+    setTimeout(() => {
+        console.log('ВЫмой всю хату');
+        cb(null, 'или умри');
+    }, 3000);
+}
+function coocingHard(cb) {
+    setTimeout(() => {
+        console.log('Наготовь еды на месяц за пару часов');
+        console.log('Ленивая тварь');
+        cb(null, 'все равно Ленивая тварь');
+    }, 1000);
+}
+function washTheWindows(status, cb) {
+    setTimeout(() => {
+        console.log(`Вымой все окна`);
+        if (status === 'bad') {
+            console.log('Выпади')
+            cb('или умри', null);
+        } else {
+            cb(null, 'успех!');
+        }
+    }, 1000);
+}
+function tigers(cb) {
+    setTimeout(() => {
+        console.log(`'Отгрызи когти тигру'`);
+        cb(null, 'С НОвым годом,братишка,йо');
+    }, 2000);
+}
+function cat(cb) {
+    setTimeout(() => {
+        console.log(`Ну можно еще и котику`);
+        cb(null, 'Грызи тебе говорят');
+    }, 1000);
+}
+function dead(value, cb) {
+    setTimeout(() => {
+        console.log(`если ты все еще жив`);
+        cb(null, `Смотри ${value}`);
+    }, 200);
+}
+function sleep(cb) {
+    setTimeout(() => {
+        console.log(`да харош уже`);
+        cb(null, `умер в подушку таки`);
+    }, 100);
+}
+
+schedule('bad', (err, success) => {
     if (err) {
         console.error(err);
-        return;
-    }
-    brushPerushki((err, success) => {
-        if (err) {
-            console.error(err);
-            return;
-        }
-        console.log(success);
-        wabrushHardsh((err, success) => {
+    } else {
+        wakeUp((err, success) => {
             if (err) {
                 console.error(err);
-                return;
-            }
-            console.log(success);
-            coocingHard('bad', (err, success) => {
-                if (err) {
-                    console.error(err);
-                    return;
-                }
+            } else {
                 console.log(success);
-            });
+                brushToosh((err, success) => {
+                    if (err) {
+                        console.error(err);
+                    } else {
+                        console.log(success);
+                        brushPerushki('bad', (err, success) => {
+                            if (err) {
+                                console.error(err);
+                            } else {
+                                console.log(success);
+                                brushHard((err, success) => {
+                                    if (err) {
+                                        console.error(err);
+                                    } else {
+                                        console.log(success);
+                                        coocingHard((err, success) => {
+                                            if (err) {
+                                                console.error(err);
+                                            } else {
+                                                console.log(success);
+                                                washTheWindows('bad', (err, success) => {
+                                                    if (err) {
+                                                        console.error(err);
+                                                    } else {
+                                                        console.log(success);
+                                                        tigers((err, success) => {
+                                                                if (err) {
+                                                                    console.error(err);
+                                                                } else {
+                                                                    console.log(success);
+                                                                    cat((err, success) => {
+                                                                        if (err) {
+                                                                            console.error(err);
+                                                                        } else {
+                                                                            console.log(success);
+                                                                            dead('romanticyyy', (err, success) =>{
+                                                                                if (err) {
+                                                                                    console.error(err);
+                                                                                } else{
+                                                                                    console.log(success);
+                                                                                    sleep((err, success) => {
+                                                                                        if (err) {
+                                                                                            console.error(err);
+                                                                                        } else{
+                                                                                            console.log(success);
+                                                                                        }
+                                                                                    })
+                                                                                }
+                                                                            })
+                                                                        }
+                                                                    })
+                                                                }
+                                                            }
+                                                        )
+                                                    }
+                                                });
+                                            }
+                                        })
+                                    }
+                                })
+                            }
+                        });
+                    }
+                });
+            }
         });
-    });
-});
-
-
-
+    }
+})
