@@ -211,10 +211,10 @@
 function schedule(morning, cb) {
     setTimeout(() => {
         if (morning === 'bad') {
-            console.log(`>>> ${morning} morning`);
-            cb('this is the (dead) end', null);
+            console.log(`чисто -${morning} утро`);
+            cb('Праснись или умри', null);
         } else {
-            cb(null, `>>> ${morning} morning`)
+            cb(null, `чисто - ${morning} morning`)
         }
     }, 500)
 }
