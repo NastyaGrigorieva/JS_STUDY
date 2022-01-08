@@ -5,34 +5,41 @@ const id = JSON.parse(params);
 fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
     .then(value => value.json())
     .then(posts => {
-        let postsWrap = document.getElementsByClassName('posts-wrap')[0];
+        const postsWrap = document.getElementsByClassName('posts-wrap')[0];
         for (const post of posts) {
-            let div = document.createElement('div');
-            let title = document.createElement('h2');
-            let body = document.createElement('p');
-            let btn = document.createElement('button');
+            const div = document.createElement('div');
+            const title = document.createElement('h2');
+            const body = document.createElement('p');
+            const button = document.createElement('button');
+
+
+            div.classList.add('father');
+            title.classList.add('title');
+            body.classList.add('parag');
+            button.classList.add('btn');
+
 
             title.innerText = post.title;
             body.innerText = post.body;
-            btn.innerText = 'comments';
+            button.innerText = 'comments';
 
             div.appendChild(title);
             div.appendChild(body);
-            div.appendChild(btn);
-            btn.onclick = () => {
-                btn.style = 'display: none'
+            div.appendChild(button);
+            button.onclick = () => {
+                button.style = 'display: none'
 
                 fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
                     .then(value => value.json())
                     .then(comments => {
-                        let ulList = document.getElementsByTagName('ul');
+                        const ulList = document.getElementsByTagName('ul');
                         for (const u of ulList) {
                             u.innerText = '';
                         }
-                        let ul = document.createElement('ul');
+                        const ul = document.createElement('ul');
 
                         for (const comment of comments) {
-                            let li = document.createElement('li');
+                            const li = document.createElement('li');
                             li.innerText = comment.name;
                             ul.appendChild(li);
                         }

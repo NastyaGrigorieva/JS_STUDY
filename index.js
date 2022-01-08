@@ -22,24 +22,30 @@
 // 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации
 //  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
 
-
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(value => value.json())
 
     .then(value => {
-        let usersWrap = document.getElementsByClassName('users-wrap')[0];
+        const usersWrap = document.getElementsByClassName('users-wrap')[0];
         for (const user of value) {
-            let div = document.createElement('div');
-            div.innerText = user.id + ' ' + user.name;
-            let btn = document.createElement('button');
-            btn.innerText = 'Details';
-            div.append(btn);
-            btn.onclick = () => location.href = `user-details.html?user=${JSON.stringify(user)}`;
+            const div = document.createElement('div');
+            div.classList.add(`blockUser`);
+            const hr = document.createElement('hr');
+            const button = document.createElement('button');
+            button.classList.add('btnUser')
+
+            div.innerText =  `id: ${user.id}, name: ${user.name}`;
+            hr.innerText = '';
+            button.innerText = 'user-details';
+
+            div.append(hr);
+            div.append(button);
+
+            button.onclick = () => location.href = `user-details.html?user=${JSON.stringify(user)}`;
 
             usersWrap.appendChild(div);
         }
     });
-
 // Стилизация проекта -
 // index.html - все блоки с user - по 2 в ряд. кнопки/ссылки находяться под информацией про user.
 // user-details.html - блок с информацией про user вверху страницы. Кнопка ниже, на 90% ширины страницы, по центру.

@@ -1,0 +1,35 @@
+.father{
+background: #dbd5e7;
+   padding: 3px;
+}
+.posts-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.title{
+    width: 750px;
+background: honeydew;
+}
+.parag{
+    width: 500px;
+background: #f1ad9f;
+    margin: 5px;
+}
+.btn{
+    height: 20%;
+    width: 220px;
+
+    margin: 5px;
+    margin-left: 2%;
+    color: #68eeca;
+    background: #a3a6e8;
+    border: none;
+}
+ul > li{
+    width: 300px;
+    margin: 15px;
+    background: #c2f8ac;
+}
